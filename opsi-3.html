@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Anak Garuda Food — Company Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .page {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Parallax untuk desktop */
+    @media (min-width: 768px) {
+      .page::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        z-index: 0;
+      }
+    }
+
+    /* Fade-in animasi */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating WhatsApp */
+    .wa-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 50;
+      background-color: #25d366;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    .wa-btn:hover { transform: scale(1.1); }
+    .wa-icon { width: 28px; height: 28px; fill: white; }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* FIX: Mobile image rapat penuh layar tanpa jarak */
+    @media (max-width: 767px) {
+      .page {
+        height: auto;
+      }
+      .page img {
+        object-fit: contain;   /* cover agar rapat penuh */
+        width: 100%;
+        height: auto;
+        background-color: #000; /* agar sisi kiri/kanan hitam */
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+      body, html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+    }
+  </style>
+
+  <link rel="preload" as="image" href="/images2/Untitled-3-01.jpg">
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <!-- 12 halaman PDF -->
+  <section class="page fade-in" data-bg="/images2/Untitled-3-01.jpg">
+    <img src="/images2/Untitled-3-01.jpg" alt="Page 1" class="md:hidden" loading="eager">
+  </section>
+  <section class="page fade-in" data-bg="/images2/Untitled-3-02.jpg">
+    <img src="/images2/Untitled-3-02.jpg" alt="Page 2" class="md:hidden" loading="lazy">
+  </section>
+  <section class="page fade-in" data-bg="/images2/Untitled-3-03.jpg">
+    <img src="/images2/Untitled-3-03.jpg" alt="Page 3" class="md:hidden" loading="lazy">
+  </section>
+  <section class="page fade-in" data-bg="/images2/Untitled-3-04.jpg">
+    <img src="/images2/Untitled-3-04.jpg" alt="Page 4" class="md:hidden" loading="lazy">
+  </section>
+  <section class="page fade-in" data-bg="/images2/Untitled-3-05.jpg">
+    <img src="/images2/Untitled-3-05.jpg" alt="Page 5" class="md:hidden" loading="lazy">
+  </section>
+  <section class="page fade-in" data-bg="/images2/Untitled-3-06.jpg">
+    <img src="/images2/Untitled-3-06.jpg" alt="Page 6" class="md:hidden" loading="lazy">
+  </section>
+  <section class="page fade-in" data-bg="/images2/Untitled-3-07.jpg">
+    <img src="/images2/Untitled-3-07.jpg" alt="Page 7" class="md:hidden" loading="lazy">
+  </section>
+  <section class="page fade-in" data-bg="/images2/Untitled-3-08.jpg">
+    <img src="/images2/Untitled-3-08.jpg" alt="Page 8" class="md:hidden" loading="lazy">
+  </section>
+  <section class="page fade-in" data-bg="/images2/Untitled-3-09.jpg">
+    <img src="/images2/Untitled-3-09.jpg" alt="Page 9" class="md:hidden" loading="lazy">
+  </section>
+  <section class="page fade-in" data-bg="/images2/Untitled-3-10.jpg">
+    <img src="/images2/Untitled-3-10.jpg" alt="Page 10" class="md:hidden" loading="lazy">
+  </section>
+  <section class="page fade-in" data-bg="/images2/Untitled-3-11.jpg">
+    <img src="/images2/Untitled-3-11.jpg" alt="Page 11" class="md:hidden" loading="lazy">
+  </section>
+  <section id="contact" class="page fade-in" data-bg="/images2/Untitled-3-12.jpg">
+    <img src="/images2/Untitled-3-12.jpg" alt="Page 12" class="md:hidden" loading="lazy">
+  </section>
+
+  <!-- Floating WhatsApp -->
+  <a
+    href="https://wa.me/62811320609?text=Halo%20Anak%20Garuda%20Food%2C%20saya%20tertarik%20dengan%20produk%20Anda!"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="wa-btn"
+    aria-label="Chat via WhatsApp"
+  >
+    <svg class="wa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+      <path d="M16.003 2.002c-7.732 0-14 6.27-14 14.003a13.9 13.9 0 0 0 2.073 7.28L2 30l6.881-2.008A13.9 13.9 0 0 0 16.003 30c7.734 0 14.004-6.27 14.004-14.002s-6.27-13.996-14.004-13.996zm0 25.704a11.7 11.7 0 0 1-6.012-1.659l-.432-.255-4.088 1.197 1.181-3.987-.283-.41A11.7 11.7 0 0 1 4.302 16c0-6.44 5.253-11.694 11.7-11.694 6.447 0 11.701 5.254 11.701 11.694 0 6.446-5.254 11.706-11.7 11.706zm6.415-8.783c-.348-.173-2.057-1.014-2.375-1.13-.318-.116-.55-.173-.78.174-.23.348-.896 1.13-1.098 1.36-.202.23-.405.26-.753.087-.348-.173-1.47-.54-2.8-1.722a10.37 10.37 0 0 1-1.926-2.374c-.202-.348-.021-.537.152-.71.156-.157.348-.405.52-.608.173-.202.23-.347.348-.579.115-.23.058-.434-.028-.607-.087-.173-.78-1.884-1.068-2.58-.282-.68-.568-.59-.78-.601l-.667-.013c-.23 0-.607.087-.926.434-.318.348-1.217 1.187-1.217 2.894 0 1.706 1.246 3.354 1.419 3.584.173.23 2.456 3.747 5.953 5.254.833.36 1.482.574 1.987.734.834.265 1.593.228 2.192.138.669-.1 2.057-.84 2.346-1.649.289-.81.289-1.507.202-1.649-.087-.144-.318-.23-.667-.405z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Fade-in + parallax
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const section = entry.target;
+        if (entry.isIntersecting) {
+          section.classList.add("show");
+          const bg = section.dataset.bg;
+          if (bg && window.innerWidth >= 768) {
+            section.style.backgroundImage = `url(${bg})`;
+            section.style.backgroundPosition = "top center";
+            section.style.backgroundSize = "cover";
+            section.style.backgroundRepeat = "no-repeat";
+            section.style.backgroundAttachment = "fixed";
+          }
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".page").forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
