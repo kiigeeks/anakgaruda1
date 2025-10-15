@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anak Garuda Food — Company Profile (Parallax)</title>
+  <!-- Tailwind CDN (quick prototype). For production, gunakan build Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* small helpers for parallax & overlay */
+    .parallax {
+      background-attachment: fixed; /* desktop */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    /* iOS Safari doesn't support background-attachment: fixed properly.
+       Provide a gentle fallback: use transform to simulate parallax on scroll */
+    @media (max-width: 768px) {
+      .parallax {
+        background-attachment: scroll;
+      }
+    }
+
+    /* subtle fade-in on section content */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+  <!-- NAV -->
+  <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl bg-white/10 backdrop-blur-md rounded-full px-4 py-2 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold">AG</div>
+      <div class="hidden md:block">
+        <div class="text-sm font-semibold">Anak Garuda Food</div>
+        <div class="text-xs text-white/70">Born in Nusantara — Made for the World</div>
+      </div>
+    </div>
+    <div class="flex gap-3 items-center">
+      <a href="#about" class="text-sm px-3 py-2 rounded hover:bg-white/10">About</a>
+      <a href="#products" class="text-sm px-3 py-2 rounded hover:bg-white/10">Products</a>
+      <a href="#quality" class="text-sm px-3 py-2 rounded hover:bg-white/10">Quality</a>
+      <a href="#roadmap" class="text-sm px-3 py-2 rounded hover:bg-white/10">Roadmap</a>
+      <a href="#contact" class="btn bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO / PAGE 1 -->
+  <section id="hero" class="h-screen parallax" style="background-image: url('/images/page1-hero.jpg')">
+    <div class="h-full w-full bg-black/45 flex items-center justify-center">
+      <div class="text-center px-6">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Born in Nusantara,<br/>Made for the World</h1>
+        <p class="mt-4 text-lg md:text-xl text-white/90 max-w-2xl mx-auto">Modern local snacks — honest portions, authentic taste, & sustainable sourcing.</p>
+        <div class="mt-8 flex justify-center gap-4">
+          <a href="#about" class="px-6 py-3 bg-white/90 text-gray-900 rounded-full font-semibold shadow-lg">Discover</a>
+          <a href="#products" class="px-6 py-3 border border-white/30 rounded-full">Our Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / PAGE 2 -->
+  <section id="about" class="h-screen parallax" style="background-image: url('/images/page2-about.jpg')">
+    <div class="h-full w-full bg-gradient-to-b from-black/30 to-black/50 flex items-center">
+      <div class="container mx-auto px-6 md:px-12 lg:px-24">
+        <div class="max-w-3xl reveal p-6 bg-white/5 rounded-lg">
+          <h2 class="text-2xl md:text-3xl font-bold">About PT. Anak Garuda Sejahtera</h2>
+          <p class="mt-4 text-white/90">PT. Anak Garuda Sejahtera — based in Kota Batu, East Java — crafts modern local snacks blending authentic Nusantara flavor with contemporary design. We support local farmers, reduce waste, and aim for sustainable impact.</p>
+          <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div class="p-3 bg-white/6 rounded">
+              <div class="font-semibold">100+ Farmers Supported</div>
+              <div class="text-sm text-white/70">Community uplift & fair sourcing</div>
+            </div>
+            <div class="p-3 bg-white/6 rounded">
+              <div class="font-semibold">Waste Reduction</div>
+              <div class="text-sm text-white/70">Sustainable processes</div>
+            </div>
+            <div class="p-3 bg-white/6 rounded">
+              <div class="font-semibold">Modern Packaging</div>
+              <div class="text-sm text-white/70">Honest portions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS / PAGE 3 -->
+  <section id="products" class="h-screen parallax" style="background-image: url('/images/page3-products.jpg')">
+    <div class="h-full w-full bg-black/40 flex items-center">
+      <div class="container mx-auto px-6 md:px-12 lg:px-24">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="reveal">
+            <h2 class="text-3xl font-bold">Our Creations</h2>
+            <p class="mt-4 text-white/90">Light, true to form, and enjoyable anytime. A selection of fruit & veggie crackers and chips designed for bold flavor exploration.</p>
+            <ul class="mt-4 list-disc pl-5 text-white/80">
+              <li>Strawberry, Grape, Dragon Fruit, Kiwi Fruit Crackers</li>
+              <li>Banana, Pineapple, Jackfruit Chips</li>
+              <li>Broccoli, Taro, Mushroom, Sweet Potato Chips</li>
+            </ul>
+            <a href="#contact" class="mt-6 inline-block px-5 py-3 bg-white/90 text-gray-900 rounded-full font-semibold">Order / Contact</a>
+          </div>
+
+          <div class="reveal grid grid-cols-2 gap-4">
+            <!-- Product cards (overlaying the product-image background) -->
+            <div class="p-4 bg-white/6 rounded-lg">
+              <div class="h-40 bg-white/5 rounded flex items-center justify-center">Product Image</div>
+              <div class="mt-3 font-semibold">Strawberry Fruit Crackers</div>
+            </div>
+            <div class="p-4 bg-white/6 rounded-lg">
+              <div class="h-40 bg-white/5 rounded flex items-center justify-center">Product Image</div>
+              <div class="mt-3 font-semibold">Taro Chips - Smoky</div>
+            </div>
+            <div class="p-4 bg-white/6 rounded-lg">
+              <div class="h-40 bg-white/5 rounded flex items-center justify-center">Product Image</div>
+              <div class="mt-3 font-semibold">Honey Banana</div>
+            </div>
+            <div class="p-4 bg-white/6 rounded-lg">
+              <div class="h-40 bg-white/5 rounded flex items-center justify-center">Product Image</div>
+              <div class="mt-3 font-semibold">Assorted Veggie Chips</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY / PAGE 4 -->
+  <section id="quality" class="h-screen parallax" style="background-image: url('/images/page4-quality.jpg')">
+    <div class="h-full w-full bg-black/50 flex items-center">
+      <div class="container mx-auto px-6 md:px-12 lg:px-24">
+        <div class="max-w-3xl reveal p-6 bg-white/5 rounded-lg">
+          <h2 class="text-2xl md:text-3xl font-bold">Production & Quality Assurance</h2>
+          <p class="mt-4 text-white/90">All products are developed and produced in Batu City, East Java — under strict hygiene standards. Ingredients are sourced from selected local farmers to ensure freshness and sustainability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENT / PAGE 5 -->
+  <section id="achievement" class="h-screen parallax" style="background-image: url('/images/page5-achievement.jpg')">
+    <div class="h-full w-full bg-black/45 flex items-center">
+      <div class="container mx-auto px-6 md:px-12 lg:px-24">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="reveal">
+            <h2 class="text-3xl font-bold">Achievement & Testimonials</h2>
+            <p class="mt-4 text-white/90">Our first international shipment to Canada (50,000 units) and participation at Indo–Denmark Business Exhibition are proof our concept resonates beyond borders.</p>
+            <blockquote class="mt-4 italic text-white/80">“Our work is small, but its impact reaches far.” — Tuti, Farmer in East Java</blockquote>
+          </div>
+          <div class="reveal">
+            <div class="p-6 bg-white/6 rounded-lg">
+              <div class="font-semibold">Export Milestone</div>
+              <div class="text-sm text-white/80 mt-2">50,000 units — Canada</div>
+              <div class="mt-4 grid grid-cols-2 gap-2">
+                <div class="p-3 bg-white/5 rounded">Indo–Denmark Exhibition</div>
+                <div class="p-3 bg-white/5 rounded">Local Farmer Partnerships</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP / PAGE 6 -->
+  <!-- <section id="roadmap" class="h-screen parallax" style="background-image: url('/images/page6-roadmap.jpg')">
+    <div class="h-full w-full bg-black/50 flex items-center justify-center">
+      <div class="max-w-3xl text-center reveal p-6 bg-white/5 rounded-lg">
+        <h2 class="text-3xl font-bold">Brand Roadmap</h2>
+        <p class="mt-4 text-white/90">After Canada, we're preparing expansions to Australia, Japan, Hong Kong, and Africa — bringing honest local snacks to the global stage.</p>
+        <div class="mt-6 flex flex-wrap gap-3 justify-center">
+          <div class="px-4 py-2 bg-white/6 rounded">Canada ✅</div>
+          <div class="px-4 py-2 bg-white/6 rounded">Australia</div>
+          <div class="px-4 py-2 bg-white/6 rounded">Japan</div>
+          <div class="px-4 py-2 bg-white/6 rounded">Hong Kong</div>
+          <div class="px-4 py-2 bg-white/6 rounded">Africa</div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- CONTACT / FOOTER / PAGE 7 -->
+  <section id="contact" class="h-screen parallax" style="background-image: url('/images/page7-contact.jpg')">
+    <div class="h-full w-full bg-black/60 flex items-center">
+      <div class="container mx-auto px-6 md:px-12 lg:px-24">
+        <div class="max-w-2xl reveal p-6 bg-white/6 rounded-lg">
+          <h2 class="text-2xl md:text-3xl font-bold">Found Something Worth Believing In?</h2>
+          <p class="mt-4 text-white/90">Contact us to order, collaborate, or become a distribution partner.</p>
+
+          <form class="mt-6 grid grid-cols-1 gap-3 bg-white/50 rounded-xl p-10">
+            <input class="p-3 bg-white rounded" type="text" placeholder="Your name" />
+            <input class="p-3 bg-white rounded" type="email" placeholder="Email" />
+            <textarea class="p-3 bg-white rounded" rows="4" placeholder="Message"></textarea>
+            <div class="flex gap-3">
+              <button type="button" class="px-5 py-3 bg-white text-gray-900 rounded-full font-semibold">Send Message</button>
+              <a href="tel:+62811320609" class="px-5 py-3 border border-white/20 rounded-full">Call +62 811320609</a>
+            </div>
+          </form>
+
+          <div class="mt-6 text-sm text-white/70">
+            <div>PT. Anak Garuda Sejahtera — Kota Batu, Indonesia</div>
+            <div class="mt-1">anakgarudafood.com</div>
+          </div>
+        </div>
+
+        <footer class="mt-6 text-center text-xs text-white/50">© Anak Garuda Sejahtera</footer>
+      </div>
+    </div>
+  </section>
+
+  <!-- minimal script to reveal elements on scroll -->
+  <script>
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
