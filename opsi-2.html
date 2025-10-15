@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Anak Garuda Food — Company Profile 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .page {
+      height: 100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    @media (max-width: 768px) {
+      .page { background-attachment: scroll; }
+    }
+
+    /* Fade-in animasi sederhana */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- 12 halaman PDF sebagai background -->
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-01.jpg')"></section>
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-02.jpg')"></section>
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-03.jpg')"></section>
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-04.jpg')"></section>
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-05.jpg')"></section>
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-06.jpg')"></section>
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-07.jpg')"></section>
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-08.jpg')"></section>
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-09.jpg')"></section>
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-10.jpg')"></section>
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-11.jpg')"></section>
+  <section class="page fade-in" style="background-image: url('/images2/Untitled-3-12.jpg')"></section>
+
+  <script>
+    // animasi fade-in saat halaman discroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
